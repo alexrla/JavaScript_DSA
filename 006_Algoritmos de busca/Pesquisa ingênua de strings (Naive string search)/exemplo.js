@@ -1,0 +1,14 @@
+function naiveSearch(str, pattern) {
+  let count = 0;
+
+  for(let i = 0; i < str.length; i++) {
+    for(let j = 0; j < pattern.length; j++) {
+      if(pattern[j] !== str[i + j]) break;
+      if(j + 1 === pattern.length) count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(naiveSearch("wowomgzomg", "omg"));

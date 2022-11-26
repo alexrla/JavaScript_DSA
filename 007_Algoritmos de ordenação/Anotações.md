@@ -97,3 +97,32 @@
 
   - **Melhor caso: `O(n)` (quando o array já está classificado/quase lá);**
   - **Pior caso: `O(n²)` (O Bubble sort emprega dois loops: um loop interno e um loop externo, cada qual podendo passar por todo o array, com isso, temos: `O(nxn) = O(n²)`;**
+    - **E o pior caso pode ocorrer se quisermos classificar em ordem crescente e o array estiver em ordem decrescente;**
+
+#### Selection Sort
+
+- **Semelhante ao `bubble sort` só que, ao invés de colocar os valores maiores em suas devidas posições (a ordenação é feita a partir dos maiores valores), aqui os valores menores é que são primeiramente ordenados (colados em sua devidas posições);**
+
+- **Pseudocódigo:**
+
+  ```javascript
+  /*
+  	- Armazene o primeiro elemento como o menor valor que você viu até agora;
+  	
+  	- Compare este item com o próximo item do array até encontrar um número menor;
+  	
+  	- Se um número menor for encontrado, designe esse número menor como o novo "mínimo" e continue até o final do array;
+  	
+  	- Se o "mínimo" não for o valor(índice) com o qual você começou inicialmente, troque os dois valores (o que salvamos na 	real, não é o número e sim o índice);
+  	
+  	- Repita isso com o próximo elemento até que o array seja classificada;
+  */
+  ```
+
+- **BIG-O - Selection Sort:**
+  - **Melhor caso: `O(n²)` (quando o array já está classificado/quase lá);**
+  - **Pior caso: `O(n²)` (O Selection sort também emprega dois loops: um loop interno e um loop externo, cada qual podendo passar por todo o array, com isso, temos: `O(nxn) = O(n²)`;**
+    - **E mais uma vez, o pior caso pode ocorrer se quisermos classificar em ordem crescente e o array estiver em ordem decrescente;**
+
+
+

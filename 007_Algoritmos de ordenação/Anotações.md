@@ -161,3 +161,63 @@
 
 - **Os melhores casos acontecem quando os arrays estão já estão ordenados, ou quando os mesmo estão quase ordenados;**
 
+
+
+#### Nota
+
+- **Os algoritmos de ordenação vistos até agora: `Bubble Sort`, `Selection Sort` e `Ìnsertion Sort`, são algoritmos que não funcionam bem quando trabalhamos com um grande número de dados (são muito lentos). Logo, precisaremos de algoritmos de ordenação capazes de ordenar arrays com grandes quantidades de itens, de forma mais rápida;**
+- **E existe uma gama de algoritmos de ordenação mais rápidos, que melhoram a complexidade de tempo de  O(n²), para O(n log n);**
+- **Porém, há uma troca entre eficência e simplificidade: esses algoritmos são mais eficientes, mas são menos simples e levam mais tempo para se entender;**
+
+
+
+#### Merge Sort
+
+- **Combinação de duas coisas: mesclar e ordenar;**
+- **OBSs.: **
+  - **Explora o fato de que arrays de 0/1 elemento estarem sempre ordenados;**
+  - **Funciona decompondo um array em vários arrays menores de 0/1 elementos e, em seguida, contrói um novo array (maior), agora ordenado;**
+
+- **Mesclando arrays**
+
+  - **Para implementar o `Merge Sort` é útil, primeiro, implementar a função responsável por mesclar dois arrays ordenados;**
+    - **Dados dois arrays  já ordenados, esta função auxiliar deve criar um novo array que também é ordenada e que contêm todos os itens de ambos os arrays dados na entrada;**
+  - **Esta função deve ser executada é um tempo O(n + m) e espaço O(n + m) e não deve modificar os parâmetros passados a ela;**
+
+- **Pseudocódigo - Mesclagem de arrays::**
+
+  ```javascript
+  /*
+  	- Crie um array vazio (e dê uma olhada nos menores valores de cada array da entrada);
+  	
+  	- Enquanto existir valores que ainda não olhamos (em pelo menos um dos arrays):
+  	
+  		- Se o valor do primeiro array for menor que o valor do segundo array, insira o valor do primeiro array no array 			criado inicialmente (o array de retorno) e passe para o próximo item do primeiro array;
+  		
+  		- Se o valor do primeiro array for maior que o primeiro valor do segundo array, insira o valor do segundo array no 			array de retorno e passe para o próximo item do segundo array;
+  		
+  		- Depois de esgotar um array, insira todos os valores restantes do outro array, no array de retorno;
+  */
+  ```
+
+- **Pseudocódigo:**
+
+  ```javascript
+  /*
+  	- Divida o array em metades até que você tenha arrays vazios ou unitários (de um elemento);
+  	
+  	- Em seguida, depois de ter os arrays menores ordenados, mescle esses arrays com os demais até que se tenha um array com 	 todos os elementos (com o comprimento total do array) ordenados;
+  	
+  	- Uma vez que o array foi mesclado totalmente, retorne o array mesclado (e ordenado);
+  */
+  ```
+
+- **Exemplo:**
+
+  ![image-20221128164205330](/home/alexa/.config/Typora/typora-user-images/image-20221128164205330.png)
+
+- **BIG-O - Merge Sort:**
+
+  | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
+  | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
+  |             O(n log n)              |          O(n log n)           |            O(n log n)             |          O(n)          |

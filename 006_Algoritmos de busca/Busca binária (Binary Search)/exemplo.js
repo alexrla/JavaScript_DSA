@@ -44,7 +44,7 @@ console.log(
   ], 100)
 ); // -1
 
-// Outros formas de escrita
+// Outras formas de escrita
 // - 1
 function binarySearch2(arr, element) {
   let start = 0;

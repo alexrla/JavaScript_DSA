@@ -126,3 +126,38 @@
 
 
 
+#### Insertion Sort
+
+- **A ordenação/classificação é feita, criando-se gradualmente, uma metade à esquerda maior, que é sempre ordenada (pega cada elemento e o coloca onde ele deve ficar na metade ordenada - insere de cada vez, os itens, no local correto);**
+
+- **Pseudocódigo:**
+
+  ```javascript
+  /*
+  	- Comece escolhendo o segundo elemento da matriz (a parte ordenada é considerada o primeiro item do array);
+  	
+  	- Agora compare esse segundo elemento com o anterior e troque-os de posição caso necessário;
+  	
+  	- Siga para o próximo elemento e, se ele estiver na ordem incorreta, percorra a parte ordenada (o lado esquerdo) para 		colocar o elemento no local correto;
+  	
+  	- Repita os passos acima até que a matriz esteja totalmente ordenada;
+  */
+  ```
+
+- **BIG-O - Insertion Sort:**
+
+  - **Melhor caso: `O(n)`;**
+  - **Pior caso: `O(n²)`**
+
+
+
+#### BIG-O: Bubble, Selection e Insertion Sort
+
+|   Algoritmo    | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
+| :------------: | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
+|  Bubble Sort   |                O(n)                 |             O(n²)             |               O(n²)               |          O(1)          |
+| Selection Sort |                O(n²)                |             O(n²)             |               O(n²)               |          O(1)          |
+| Insertion Sort |                O(n)                 |             O(n²)             |               O(n²)               |          O(1)          |
+
+- **Os melhores casos acontecem quando os arrays estão já estão ordenados, ou quando os mesmo estão quase ordenados;**
+

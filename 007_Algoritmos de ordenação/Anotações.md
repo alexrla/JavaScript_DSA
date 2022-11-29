@@ -305,3 +305,75 @@
   | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
   | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
   |             O(n log n)              |          O(n log n)           |               O(n²)               |        O(log n)        |
+
+
+
+#### Complexidade de tempo - Casos médio
+
+- **Bubble Sort: `O(n²)`;**
+
+- **Insertion Sort: `O(n²)`;**
+
+- **Selection Sort: `O(n²)`;**
+
+- **Merge Sort: `O(n log n)`;**
+
+- **Quick Sort: `O(n log n)`;**
+
+  **Existe formas melhores de ordenação, mas que são feitas, sem utilizar a comparação dos valores (qual é maior/menor);**
+
+
+
+#### Radix Sort
+
+- **Funciona com lista de números;**
+
+- **Explora o fato de que as informações sobre o tamanho de um número, são codificadas no número de dígitos;**
+
+- **Nunca faz comparação entre os elementos do array;**
+
+- **Mais dígitos significa um número maior;**
+
+- **Helpers:**
+
+  - **Para implementar o `radix sort`, precisaremos criar algumas funções auxiliares;**
+
+    - **A primeira função retorna o dígito de um número, através de um valor fornecido (um índice, que faz referência a posição do dígito);**
+
+    - **A segunda função auxiliar retorna o número de dígitos que o número possui (utilizada para sabermos o maior número e a quantidade de vezes que iremos realizar o processo);**
+    - **A terceira e última função auxiliar, é utilizada para retornar o número de dígitos do maior número (utilizada em conjunto com a segunda função auxiliar);**
+
+- **Pseudocódigo:**
+
+  ```javascript
+  /*
+  	- Definir uma função que aceita uma lista de números;
+  	
+  	- Descubra quantos algarismos tem o maior número;
+  	
+  	- Loop de k = 0, até o maior número de dígitos;
+  	
+  	- Para cada iteração do loop:
+  		
+  		- Crie "baldes" para cada dígito (0... 9);
+  		
+  		- Coloque cada número no balde correspondente, com base no seu késimo dígito;
+  		
+  	- Substitua o array existente por valores em nossos "baldes", começando com 0 e indo até o 9;
+  		
+  	- Retorne o "array final";
+  */
+  ```
+
+- **BIG-O - Radix Sort:**
+
+  | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
+  | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
+  |                O(nk)                |             O(nk)             |               O(nk)               |        O(n + k)        |
+
+  **- _n_: tamanho do array;**
+
+  **- _k_: número de dígitos;**
+
+
+

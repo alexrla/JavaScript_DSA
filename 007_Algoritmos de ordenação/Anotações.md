@@ -166,7 +166,7 @@
 #### Nota
 
 - **Os algoritmos de ordenação vistos até agora: `Bubble Sort`, `Selection Sort` e `Ìnsertion Sort`, são algoritmos que não funcionam bem quando trabalhamos com um grande número de dados (são muito lentos). Logo, precisaremos de algoritmos de ordenação capazes de ordenar arrays com grandes quantidades de itens, de forma mais rápida;**
-- **E existe uma gama de algoritmos de ordenação mais rápidos, que melhoram a complexidade de tempo de  O(n²), para O(n log n);**
+- **E existe uma gama de algoritmos de ordenação mais rápidos, que melhoram a complexidade de tempo de  O (n²), para O (n log n);**
 - **Porém, há uma troca entre eficência e simplificidade: esses algoritmos são mais eficientes, mas são menos simples e levam mais tempo para se entender;**
 
 
@@ -221,3 +221,87 @@
   | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
   | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
   |             O(n log n)              |          O(n log n)           |            O(n log n)             |          O(n)          |
+
+
+
+#### Quick Sort
+
+- **Assim como o `Merge Sort`, explora o fato de que os arrays de 0/1 elemento, estão sempre ordenados;**
+
+- **Funciona selecionando um elemento (chamado de "pivô" - "pivot" - um ponto de articulação/de partida) e encontrando o índice onde esse elemento deve terminar após a ordenação do array;**
+
+  - **Depois que esse elemento estiver posicionado corretamente, o `quiksort` pode selecionar qualquer elemento (à direita/ à esquerda do pivô);**
+
+- **Pivot Helper**
+
+  - **Para implementar o `quiksort`, é útil primeiro implementarmos uma função responsável por organizar os elementos em um array, em ambos os lados do "pivô";**
+
+    - **Dado um array, esta função auxiliar deve designar um elemento como o "pivô";**
+    - **Em seguida ela deve reorganizar os itens no array, para que todos os valores menores que o "pivô" sejam movidos para à esquerda do "pivô" e todos os valores maiores que o "pivô", sejam movidos para a sua direita;**
+    - **A ordem dos elementos de cada lado do "pivô" não importa;**
+    - **O helper deve fazer isso, sem precisar criar um novo array;**
+    - **Quando concluído o processo, a função auxiliar (helper) deve retornar o índice do pivô;**
+
+  - **Exemplo:**
+
+    ```javascript
+    let arr = [ 5, 2, 1, 8, 4, 7, 6, 3 ]
+    
+    pivot(arr); // 4;
+    
+    arr;
+    // qualquer um destes é uma mutação aceitável:
+    // [2, 1, 4, 3, 5, 8, 7, 6]
+    // [1, 4, 3, 2, 5, 7, 6, 8]
+    // [3, 2, 1, 4, 5, 7, 6, 8]
+    // [4, 1, 2, 3, 5, 6, 8, 7]
+    // existem outras mutações aceitáveis também!
+    
+    /*
+     - Tudo o que importa é que 5 esteja no índice 4, que os valores menores fiquem à esquerda e os valores maiores fiquem à direita;
+    */
+    ```
+
+- **Escolhendo um pivô:**
+
+  - **O tempo de execução do `quiksort`, depende em parte, de como o "pivô" é selecionado;**
+  - **Idealmente, o "pivô" deve ser escolhido de forma que seja aproximadamente, o valor médio do conjunto de dados que estamos buscando ordenar;**
+  - **Porém, para simplificar, optamos por escolher o primeiro elemento;**
+
+- **Pseudocódigo - Pivot (Pivô):**
+
+  ```javascript
+  /*
+  	- Aceita três argumentos (o array, o índice inicial e o índice final - eles, os índices, podem ser padronizados em 0 e o 	 comprimento do array menos 1, respectivamente);
+  	
+  	- Pegue o "pivô" desde o início do array;
+  	
+  	- Armazene o índice do "pivô" atual em uma variável (isso irá acompanhar onde o "pivô" deve terminar);
+  	
+  	- Percorra o array desde o início até o fim;
+  	
+  		- Se o "pivô" for maior que o elemento atual, incremente a variável que guarda o índice do "pivô" e então troque o 			elemento atual pelo elemento no índice do pivô; 
+  		
+  		- Troque o elemento atual (o "pivô"), pelo elemento do índice do "pivô" (aonde o pivô deve ficar);
+  		
+  	- Retorn o índice do "pivô";
+  */
+  ```
+
+- **Pseudocódigo:**
+
+  ```javascript
+  /*
+  	- Chame a função responsável por retornar o "pivô";
+  	
+  	- Quando essa função auxiliar (helper) retornar o índice do pivô atualizado, realize a chamada recursiva, passando o 		índice do "pivô" que foi retornado, juntamente com os "subarrays" à direita e á esquerda dele;
+  	
+  	O caso base ocorre quando passamos a considerar um "subarray" com menos de 2 elementos;
+  */
+  ```
+
+- **BIG-O - Quick Sort:**
+
+  | Complexidade de Tempo (Melhor caso) | Complexidade de Tempo (Média) | Complexidade de Tempo (pior caso) | Complexidade de espaço |
+  | :---------------------------------: | :---------------------------: | :-------------------------------: | :--------------------: |
+  |             O(n log n)              |          O(n log n)           |               O(n²)               |        O(log n)        |

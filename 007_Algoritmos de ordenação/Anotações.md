@@ -377,3 +377,10 @@
 
 
 
+#### Observações
+
+- **`Merge Sort` e `Quick Sort` são algoritmos de ordenação, eficientes e padrões;**
+- **`Quick Sort` pode ser lento no piro dos casos, mas é comparável ao `Merge Sort` em média;**
+- **`Merge Sort` ocupa mais memória porque cria um novo array;**
+- **`Radix Sort` é um algoritmo de ordenação rápido para números (ele explora o valor posicional para ordenar os números em tempo linear, para um número fixo de dígitos);**
+

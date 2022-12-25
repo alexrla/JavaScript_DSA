@@ -4,7 +4,7 @@
   Pseudocódigo:
   - Se o "índice" for menor que zero ou maior/igual que comprimento
   da lista, retorne false/undefined;
-  - Se o "índice" for igual ao comprimento da lista - 1, coloque 
+  - Se o "índice" for igual ao comprimento da lista - 1,
   utilize o método pop;
   - Se o "índice" for 0, utilize o método shift;
   - Caso contrário, utilizando o método get, acesse o nó de index - 1;

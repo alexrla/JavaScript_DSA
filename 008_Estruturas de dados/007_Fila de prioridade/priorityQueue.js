@@ -22,6 +22,7 @@ class PriorityQueue {
       // Elemento pai
       let parent = this.values[parentIndex];
 
+      // if(element.priority >= parent.priority) break;
       if(element.priority <= parent.priority) break;
       else {
         this.values[parentIndex] = element;
